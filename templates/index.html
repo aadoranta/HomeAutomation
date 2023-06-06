@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}?v=1.0">
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Automation</title>
+</head>
+<body>
+  <h1>Home Automation</h1>
+
+  <form action="/toggle_lamp" method="POST">
+    <button type="submit" name="light_toggle">{{ light_toggle }}</button>
+  </form>
+
+  <form action="/update_time" method="POST">
+    <small>Current sensing period is from {{ start_time }} to {{ end_time }}</small>
+    <small>Current Interval Length is {{ interval_length }}</small>
+    <br>
+    <label for="start-time-input">Start Time:</label>
+    <input type="time" id="start-time-input" name="start-time" required>
+    <br>
+    <label for="end-time-input">End Time: </label>
+    <input type="time" id="end-time-input" name="end-time" required>
+    <br>
+    <label for="interval-length"number">Interval Length</label>
+    <input type="number" id="interval-length" name="interval-length">
+    <button type="submit" name="update-time">Update Timing</button>
+  </form>
+
+
+</body>
+</html>
